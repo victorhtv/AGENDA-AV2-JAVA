@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Aula02 - Concatena nome e sobrenome</string>
+    <string name="txt_nome">Nome</string>
+    <string name="hint_nome">digite seu nome</string>
+    <string name="txt_sobrenome">Sobrenome</string>
+    <string name="hint_sobrenome">digite seu sobrenome</string>
+    <string name="btn_concatena">Concatena</string>
+</resources>
