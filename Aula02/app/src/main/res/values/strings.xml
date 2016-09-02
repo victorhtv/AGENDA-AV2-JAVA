@@ -5,4 +5,5 @@
     <string name="txt_sobrenome">Sobrenome</string>
     <string name="hint_sobrenome">digite seu sobrenome</string>
     <string name="btn_concatena">Concatena</string>
+    <string name="btn_log">Mensagem log e pop up</string>
 </resources>
