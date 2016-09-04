@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/novo"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Novo"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource" />
+
+    <item
+        android:id="@+id/exclui"
+        android:icon="@mipmap/ic_launcher"
+        android:title="Exclui aluno clicado"
+        android:showAsAction="always"
+        tools:ignore="AppCompatResource"/>
+
+</menu>

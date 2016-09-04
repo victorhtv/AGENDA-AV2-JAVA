@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">CadastroCaelum</string>
+    <string name="app_name">Agenda</string>
+    <string name="menu_settings">menu_settings</string>
 </resources>
