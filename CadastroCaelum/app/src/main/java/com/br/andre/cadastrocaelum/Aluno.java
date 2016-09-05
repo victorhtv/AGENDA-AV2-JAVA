@@ -1,9 +1,11 @@
 package com.br.andre.cadastrocaelum;
 
+import java.io.Serializable;
+
 /**
  * Created by andre on 03/09/16.
  */
-public class Aluno {
+public class Aluno implements Serializable {
     private long id;
     private String nome, site, endereco, telefone, foto;
     private double nota;

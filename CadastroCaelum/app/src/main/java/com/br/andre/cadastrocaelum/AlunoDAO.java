@@ -5,9 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.lang.String;
 
 /**
  * Created by andre on 03/09/16.
@@ -21,22 +21,6 @@ public class AlunoDAO extends SQLiteOpenHelper {
     //Obrigatorio esse metodo
     public AlunoDAO(Context context) {
         super(context, DATABASE, null, VERSAO);
-    }
-
-
-    public void salva(Aluno aluno){
-        ContentValues values = new ContentValues();
-
-        values.put("nome", aluno.getNome());
-        values.put("site", aluno.getSite());
-        values.put("endereco", aluno.getEndereco());
-        values.put("telefone", aluno.getTelefone());
-        values.put("nota", aluno.getNota());
-        values.put("foto", aluno.getFoto());
-
-
-        getWritableDatabase().insert("Alunos", null, values);
-
     }
 
     public void onCreate(SQLiteDatabase db){
@@ -70,7 +54,6 @@ public class AlunoDAO extends SQLiteOpenHelper {
 
             Aluno aluno = new Aluno();
 
-            aluno.setId(cursor.getLong(0)); //Id
             aluno.setNome(cursor.getString(1)); //Nome
             aluno.setSite(cursor.getString(2)); //Site
             aluno.setTelefone(cursor.getString(3)); // Telefone
@@ -85,10 +68,41 @@ public class AlunoDAO extends SQLiteOpenHelper {
         return alunos;
     }
 
+    public void salva(Aluno aluno){
+        ContentValues values = new ContentValues();
+
+        values.put("nome", aluno.getNome());
+        values.put("site", aluno.getSite());
+        values.put("endereco", aluno.getEndereco());
+        values.put("telefone", aluno.getTelefone());
+        values.put("nota", aluno.getNota());
+        values.put("foto", aluno.getFoto());
+
+
+        getWritableDatabase().insert("Alunos", null, values);
+
+    }
+
     public void deletar(Aluno aluno) {
 
-       String[] args = {aluno.getId().toString};
-       getWritableDatabase().delete("Alunos", "id=?", args);
+       String[] args = {aluno.getNome()};
+       getWritableDatabase().delete("Alunos", "nome=?", args);
+
+    }
+
+    public void altera(Aluno aluno) {
+        ContentValues values = new ContentValues();
+
+
+        values.put("nome", aluno.getNome());
+        values.put("site", aluno.getSite());
+        values.put("endereco", aluno.getEndereco());
+        values.put("telefone", aluno.getTelefone());
+        values.put("nota", aluno.getNota());
+        values.put("foto", aluno.getFoto());
+
+        String[] args = {aluno.getNome()};
+        getWritableDatabase().update("Alunos", values,"nome=?",args);
 
     }
 }
