@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by andre on 03/09/16.
  */
 public class Aluno implements Serializable {
-    private long id;
+    private int _id;
     private String nome, site, endereco, telefone, foto;
     private double nota;
 
@@ -15,8 +15,8 @@ public class Aluno implements Serializable {
    }
 
     //Gets
-    public long getId() {
-        return id;
+    public int getId() {
+        return _id;
     }
 
     public String getNome() {
@@ -44,8 +44,8 @@ public class Aluno implements Serializable {
     }
 
     // Sets
-    public void setId(long id) {
-        this.id = id;
+    public void setId(int _id) {
+        this._id = _id;
     }
 
     public void setNome(String nome) {

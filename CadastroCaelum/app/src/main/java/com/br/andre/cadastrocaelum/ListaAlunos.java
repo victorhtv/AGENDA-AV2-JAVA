@@ -8,14 +8,16 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.br.andre.cadastrocaelum.adapter.ListaAlunosAdapter;
 
 import java.util.List;
 
@@ -160,10 +162,11 @@ public class ListaAlunos extends AppCompatActivity {
         dao.close();
 
 
-        int layout = android.R.layout.simple_list_item_1;
+
 
         // Mostrar o array de Alunos em forma de layout nesta contentView
-        ArrayAdapter <Aluno> adapter = new ArrayAdapter<Aluno>(this, layout, alunos);
+        ListaAlunosAdapter adapter = new ListaAlunosAdapter(alunos, this);
+        LayoutInflater inflater = getLayoutInflater();
 
         // cria um objeto listView do id da lista
         lista = (ListView) findViewById(R.id.lista);

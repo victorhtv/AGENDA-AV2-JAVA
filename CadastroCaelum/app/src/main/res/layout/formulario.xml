@@ -6,9 +6,9 @@
 
     <ImageView
         android:id="@+id/foto"
-        android:src="@mipmap/ic_launcher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:src="@drawable/no_image"
+        android:layout_width="200px"
+        android:layout_height="200px"
         android:layout_gravity="center_horizontal"/>
 
 
@@ -17,19 +17,23 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Nome"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:textStyle="normal|bold" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/nome" />
+        android:id="@+id/nome"
+        android:maxLength="18"
+        android:inputType="textCapSentences"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Site"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"
+        android:textStyle="normal|bold" />
 
     <EditText
         android:layout_width="match_parent"
@@ -41,7 +45,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Endereço"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView3"
+        android:textStyle="normal|bold" />
 
     <EditText
         android:layout_width="match_parent"
@@ -53,7 +58,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Telefone"
-        android:id="@+id/textView4" />
+        android:id="@+id/textView4"
+        android:textStyle="normal|bold" />
 
     <EditText
         android:layout_width="match_parent"
@@ -67,7 +73,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Nota"
-        android:id="@+id/textView5" />
+        android:id="@+id/textView5"
+        android:textStyle="normal|bold" />
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -80,5 +87,6 @@
         android:id="@+id/botao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gravar"/>
+        android:text="Gravar"
+        android:textStyle="normal|bold" />
 </LinearLayout>

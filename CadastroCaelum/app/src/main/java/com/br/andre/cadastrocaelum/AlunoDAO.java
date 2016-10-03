@@ -26,7 +26,7 @@ public class AlunoDAO extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
 
         String ddl = "CREATE TABLE Alunos (" +
-                "id PRIMARY KEY, " +
+                "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nome TEXT UNIQUE NOT NULL," +
                 "endereco TEXT, " +
                 "telefone TEXT, " +
@@ -45,7 +45,7 @@ public class AlunoDAO extends SQLiteOpenHelper {
 
     public List<Aluno> getLista() {
 
-        String[] colunas = {"id","nome","site","telefone", "endereco","foto", "nota"};
+        String[] colunas = {"_id","nome","site","telefone", "endereco","foto", "nota"};
         Cursor cursor = getWritableDatabase().query("Alunos",colunas, null, null, null, null, null);
 
         ArrayList<Aluno> alunos = new ArrayList<Aluno>();
@@ -54,6 +54,7 @@ public class AlunoDAO extends SQLiteOpenHelper {
 
             Aluno aluno = new Aluno();
 
+            aluno.setId(cursor.getInt(0)); //Nome
             aluno.setNome(cursor.getString(1)); //Nome
             aluno.setSite(cursor.getString(2)); //Site
             aluno.setTelefone(cursor.getString(3)); // Telefone
@@ -85,14 +86,13 @@ public class AlunoDAO extends SQLiteOpenHelper {
 
     public void deletar(Aluno aluno) {
 
-       String[] args = {aluno.getNome()};
-       getWritableDatabase().delete("Alunos", "nome=?", args);
+        String[] args = {String.valueOf(aluno.getId())};
+        getWritableDatabase().delete("Alunos", "_id=?", args);
 
     }
 
     public void altera(Aluno aluno) {
         ContentValues values = new ContentValues();
-
 
         values.put("nome", aluno.getNome());
         values.put("site", aluno.getSite());
@@ -101,8 +101,20 @@ public class AlunoDAO extends SQLiteOpenHelper {
         values.put("nota", aluno.getNota());
         values.put("foto", aluno.getFoto());
 
-        String[] args = {aluno.getNome()};
-        getWritableDatabase().update("Alunos", values,"nome=?",args);
+        String[] args = {String.valueOf(aluno.getId())};
+        getWritableDatabase().update("Alunos", values,"_id=?",args);
 
+    }
+
+    //Se o telefone for de um aluno da lista, o método retorna true
+    public boolean isAluno(String telefone) {
+
+        String[] args = {telefone};
+
+        Cursor cursor = getWritableDatabase().rawQuery("SELECT _id FROM Alunos WHERE telefone = ?", args);
+
+        boolean existeUmPrimeiro = cursor.moveToFirst();
+
+        return existeUmPrimeiro;
     }
 }

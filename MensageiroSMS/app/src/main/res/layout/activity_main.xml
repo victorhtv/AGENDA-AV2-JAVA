@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.br.andre.mensageirosms.MainActivity">
+
+
+    <CheckBox
+        android:text="N"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cb_negrito"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_alignBaseline="@+id/txt_mensagem"
+        android:layout_alignBottom="@+id/txt_mensagem"
+        android:layout_toRightOf="@+id/txt_mensagem"
+        android:layout_toEndOf="@+id/txt_mensagem"
+        android:textStyle="normal|bold"
+        android:textColor="?android:attr/colorPressedHighlight" />
+
+
+    <TextView
+        android:text="Contato SMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:id="@+id/txt_contato"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:fontFamily="serif"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_below="@+id/txt_contato"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/edt_contato"
+        android:maxLength="12"
+        android:hint="Digite o número celular " />
+
+    <TextView
+        android:text="Mensagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edt_contato"
+        android:layout_alignLeft="@+id/txt_contato"
+        android:layout_alignStart="@+id/txt_contato"
+        android:layout_marginTop="19dp"
+        android:id="@+id/txt_mensagem"
+        android:textStyle="normal|bold"
+        android:textSize="18sp"
+        android:fontFamily="serif"
+        android:textColor="#000000"  />
+
+    <Button
+        android:text="Enviar WhatsApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_enviar_whatsapp"
+        android:fontFamily="serif"
+        android:textStyle="normal|bold"
+        android:textSize="24sp"
+        android:background="@android:color/holo_green_dark"
+        android:layout_below="@+id/btn_enviar_SMS"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:text="Enviar SMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_enviar_SMS"
+        android:fontFamily="serif"
+        android:textStyle="normal|bold"
+        android:textSize="24sp"
+        android:textColorLink="@android:color/holo_green_dark"
+        android:background="@android:color/holo_blue_dark"
+        android:layout_below="@+id/edt_mensagem"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/edt_mensagem"
+        android:hint="Escreva sua mensagem aqui..."
+
+        android:gravity="left"
+        android:autoText="false"
+        tools:inputType="textCapSentences"
+        android:layout_below="@+id/cb_riscado"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:text="I"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cb_italico"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_alignBaseline="@+id/cb_riscado"
+        android:layout_alignBottom="@+id/cb_riscado"
+        android:layout_toRightOf="@+id/cb_negrito"
+        android:layout_toEndOf="@+id/cb_negrito" />
+
+    <CheckBox
+        android:text="R"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cb_riscado"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_alignTop="@+id/txt_mensagem"
+        android:layout_toRightOf="@+id/cb_italico"
+        android:layout_toEndOf="@+id/cb_italico" />
+
+    <CheckBox
+        android:text="A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cb_alterado"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_alignTop="@+id/cb_riscado"
+        android:layout_toRightOf="@+id/cb_riscado"
+        android:layout_toEndOf="@+id/cb_riscado" />
+
+</RelativeLayout>
